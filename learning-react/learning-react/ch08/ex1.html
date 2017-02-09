@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+</html>
+
+<head>
+    <title>More State!</title>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        var LightingCounter = React.createClass({
+            getInitialState: function() {
+                return {
+                    strikes: 0
+                };
+            },
+            timerTick: function() {
+                this.setState({
+                    strikes: this.state.strikes + 100
+                });
+            },
+            componentDidMount: function() {
+                setInterval(this.timerTick, 1000);
+            },
+            render: function() {
+                var counterStyle = {
+                    color: "#66FFFF",
+                    fontSize: 50
+                };
+                var count = this.state.strikes.toLocaleString();
+                return (
+                    <h1 style={counterStyle}>{this.state.strikes}</h1>
+                );
+            }
+        });
+        var LightingCounterDisplay = React.createClass({
+            render: function() {
+                var commonStyle = {
+                    margin: 0,
+                    padding: 0
+                };
+                var divStyle = {
+                    width: 250,
+                    textAlign: "center",
+                    backgroundColor: "black",
+                    padding: 40,
+                    fontFamily: "sans-serif",
+                    color: "#999",
+                    borderRadius: 10
+                };
+                var textStyles = {
+                    emphasis: {
+                        fontSize: 38,
+                        ...commonStyle
+                    },
+                    smallEmphasis: {
+                        ...commonStyle
+                    },
+                    small: {
+                        fontSize: 17,
+                        opacity: 0.5,
+                        ...commonStyle
+                    }
+                };
+
+                return (
+                    <div style={divStyle}>
+                        <LightingCounter/>
+                        <h2 style={textStyles.smallEmphasis}>LIGHTNING STRIKES</h2>
+                        <h2 style={textStyles.emphasis}>WORDWIDE</h2>
+                        <p style={textStyles.small}>(since you loaded this example)</p>
+                    </div>
+                );
+            }
+        });
+        ReactDOM.render(
+            <LightingCounterDisplay/>,
+            document.querySelector("#container")
+        );
+    </script>
+</body>
+
+
+</html>
