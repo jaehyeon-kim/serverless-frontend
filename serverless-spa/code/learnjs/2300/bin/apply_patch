@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+abspath="$(cd "${0%/*}" 2>/dev/null; echo "$PWD"/"${0##*/}")"
+bin_dir=`dirname $abspath`
+root_dir=`dirname $bin_dir`
+
+cd $root_dir
+
+$bin_dir/check_patches || exit 1
+
+patch=$1
+
+if [[ ! -d working ]]; then
+  mkdir working
+  pushd working
+  git init
+  git pull .. master
+  popd
+else
+  pushd working
+  git reset --hard master
+fi
+
+if [[ ! -e $patch ]]; then
+  echo "$patch does not exist"
+  exit 1
+fi
+
+for patch_file in `ls $root_dir/patches/* | sort`; do
+  if [[ $patch_file < $patch ]]; then
+    git am $patch_file
+  fi
+done
+git am $patch

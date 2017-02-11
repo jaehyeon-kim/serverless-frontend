@@ -1,0 +1,10 @@
+{
+    "Bucket": "learnjs.benrady.com",
+    "BucketLoggingStatus": {
+        "LoggingEnabled": {
+            "TargetBucket": "learnjs-logging.benrady.com",
+            "TargetGrants": [],
+            "TargetPrefix": ""
+        }
+    }
+}
