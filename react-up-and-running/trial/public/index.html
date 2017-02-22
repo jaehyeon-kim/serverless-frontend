@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello React</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="app">
+            <!-- my app renders here -->
+        </div>
+        <div id="app1"></div>
+        <div id="app2"></div>
+        <div id="app3"></div>
+        <script src="react/react.js"></script>
+        <script src="react/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+        <script type="text/babel">
+            ReactDOM.render(
+                React.DOM.h1(null, "Hello World!"),
+                document.getElementById("app")
+            );
+            ReactDOM.render(
+                React.DOM.h1(
+                    {id: "my-heading", className: "pretty", htmlFor: "me"},
+                    React.DOM.span(null, React.DOM.em(null, "Hell"), "o")," World!"),
+                document.getElementById("app1")
+            );
+            ReactDOM.render(
+                <h1 id="my-heading1">
+                    <span><em>Hell</em>o</span> World!
+                </h1>,
+                document.getElementById("app2")
+            );
+            ReactDOM.render(
+                React.DOM.h1(
+                    {
+                        style: {
+                            background: "black",
+                            color: "white",
+                            fontFamily: "Verdana"
+                        }
+                    },
+                    "Hello world!"
+                ),
+                document.getElementById("app3")
+            )
+        </script>
+    </body>
+</html>
