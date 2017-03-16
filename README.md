@@ -8,10 +8,12 @@
 #### Front-end
 * [React Up and Running](https://github.com/stoyan/reactbook)
 * [Learning React](https://www.kirupa.com/react/)
+* [Mindspace](https://www.youtube.com/channel/UCSJbGtTlrDami-tDGPUV9-w/playlists)
+    + [ReactJS Basics](https://www.youtube.com/playlist?list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS) [GitHub Repo](https://github.com/mschwarzmueller/reactjs-basics)
 
 #### Back-end
 * [Preview the Python Serverless Microframework for AWS](https://aws.amazon.com/blogs/developer/preview-the-python-serverless-microframework-for-aws/)
-* [A Serverless REST API in Minutes With Serverless Framework](https://dzone.com/articles/a-serverless-rest-api-in-minutes-with-serverless-f)
+* [A Serverless REST API in Minutes With Serverless Framework](https://dzone.com/articles/a-serverless-rest-api-in-minutes-with-serverless-f)       
 
 ### General resources
 * [JustServerless/awesome-serverless](JustServerless/awesome-serverless)
@@ -28,3 +30,7 @@
 
 * [Learnjs](http://learnjs.jaehyeon.kim.s3-website-us-east-1.amazonaws.com)
 * [Learnjs Test](http://learnjs.jaehyeon.kim.s3-website-us-east-1.amazonaws.com/tests/index.html)
+
+### Extra resources
+
+*[How To Install Node.js on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04)
