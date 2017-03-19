@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+  </head>
+  <body>
+    <div id="hello-basic"></div>
+    <h1/>
+    <div id="hello-more"></div>
+    <script type="text/javascript">
+      let h1 = React.createElement("h1", null, "Hello World")
+      class HelloWorld extends React.Component {
+        render() {
+          return React.createElement('div', null, h1)
+        }
+      }
+      ReactDOM.render(
+        React.createElement(HelloWorld, null),
+        document.getElementById('hello-basic')
+      )
+      class HelloMore extends React.Component {
+        render() {
+          return React.createElement('h1', null, 'Hello ' + this.props.frameworkName + ' world!!!')
+        }
+      }
+      ReactDOM.render(
+        React.createElement(
+          'div',
+          null,
+          React.createElement(HelloMore, {id: 'ember', frameworkName: 'Ember.js', title: 'A framework for creating ambitious applications.'}),
+          React.createElement(HelloMore, {id: 'backbone', frameworkName: 'Backbone.js', title: 'Backbone.js gives structure to web applications...'}),
+          React.createElement(HelloMore, {id: 'angular', frameworkName: 'Angular.js', title: 'Superheroic JavaScript MVW Framework'})
+        ),
+        document.getElementById('hello-more')
+      )
+
+
+    </script>
+  </body>
+</html>
