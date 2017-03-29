@@ -3,7 +3,17 @@ const ReactDOM = require('react-dom');
 
 const { Router } = require('./components/router');
 
+const mapping = {
+    '#profile': <div>Profile (<a href='#'>home</a>)</div>,
+    '#accounts': <div> Accounts (<a href='#'>home</a>)</div>,
+    '*': <div>Dashboard<br/>
+        <a href='#profile'>Profile</a>
+        <br/>
+        <a href='#accounts'>Accounts</a>
+        </div>
+}
+
 ReactDOM.render(
-    <Router />,
+    <Router mapping={mapping} />,
     document.getElementById('app')
 )
